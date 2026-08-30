@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SfptTbd from '../../components/SfptTbd.astro';
+import '../../styles/sfpt.css';
+
+const title = 'Self-Forcing Post-Training of Diffusion and Flow Models for Speech Enhancement';
+---
+
+<BaseLayout
+	title={`${title} — Qing Yao`}
+	description="Paper demo for Self-Forcing Post-Training (SFPT), a post-training framework that closes the training-inference mismatch of diffusion and flow speech-enhancement models."
+	bodyClass="sfpt-body"
+>
+	<main class="sfpt-page">
+		<!--
+			AGENT RESOURCE NOTE (intentionally hidden from rendered page visitors):
+			This is the public SFPT paper demo page. The committed version is intentionally
+			minimal: title, abstract, and a TBD placeholder. Interactive demo content
+			(benchmark bar charts, quality-vs-NFE curves, audio samples) is under
+			development and will be added here, mirroring the /RSB/ page layout
+			(src/pages/RSB/index.astro). The paper's first-page footnote points readers
+			of the SFPT manuscript to this exact URL (https://yorch233.github.io/SFPT).
+		-->
+		<article class="sfpt-article">
+			<img class="sfpt-watermark" src="/logo/icon.png" alt="" aria-hidden="true" />
+
+			<header class="sfpt-hero sfpt-fade sfpt-delay-1">
+				<p class="sfpt-kicker">Paper demo</p>
+				<h1 class="sfpt-title">
+					<span class="sfpt-highlight">Self-Forcing Post-Training</span>
+					of Diffusion and Flow Models for
+					<span class="sfpt-highlight">Speech Enhancement</span>
+				</h1>
+
+				<p class="sfpt-authors">
+					<span class="sfpt-author">
+						<span class="sfpt-author-name">Qing Yao</span>
+						<a class="sfpt-email" href="mailto:qyao@stmail.ujs.edu.cn">qyao@stmail.ujs.edu.cn</a>
+					</span>
+				</p>
+
+				<ul class="sfpt-affiliations">
+					<li>School of Computer Science and Communication Engineering, Jiangsu University</li>
+				</ul>
+			</header>
+
+			<section class="sfpt-section sfpt-section-separated sfpt-fade sfpt-delay-2" aria-labelledby="abstract-heading">
+				<h2 id="abstract-heading">
+					<span class="sfpt-wave" aria-hidden="true"><span></span></span>
+					Abstract
+				</h2>
+				<div class="sfpt-abstract-wrap">
+					<p class="sfpt-abstract">
+						Recent advances in{' '}
+						<span class="sfpt-highlight">generative speech enhancement</span>{' '}
+						learn stochastic or deterministic probability paths bridging degraded and clean speech distributions, achieving remarkable perceptual quality. However, while training optimizes
+						the model on analytical states sampled from ground-truth probability paths, inference forces it to operate on rollout states recursively generated from its own predictions, where{' '}
+						<span class="sfpt-issue">prediction and discretization errors compound into a fundamental training–inference mismatch.</span>{' '}
+						<span class="sfpt-issue">Existing methods fail to address the compounding deviations on self-generated intermediate states across continuous trajectories.</span>
+						{' '}To close this gap, we cast generative speech enhancement into a two-stage framework of training followed by post-training, and propose{' '}
+						<span class="sfpt-highlight">Self-Forcing Post-Training (SFPT)</span>,{' '}
+						evaluated on two canonical probability paths:{' '}
+						<span class="sfpt-highlight">stochastic Schrödinger bridges</span>{' '}
+						and{' '}
+						<span class="sfpt-highlight">deterministic flow matching</span>.
+						Specifically, SFPT progressively expands self-correction from discrete rollout states to continuous-time off-trajectory states and their induced conditional-path marginals, while
+						updating solely on supervised clean speech reconstruction without backpropagating through trajectories. Extensive experiments on WSJ0+WHAM and WSJ0-REVERB demonstrate that SFPT
+						consistently improves both stochastic bridge and deterministic flow backbones across denoising and dereverberation tasks and across arbitrary sampling budgets.
+					</p>
+					<div class="sfpt-legend" aria-hidden="true">
+						<span class="sfpt-legend-item">
+							<span class="sfpt-legend-swatch sfpt-legend-swatch-highlight"></span>
+							Key Concepts
+						</span>
+						<span class="sfpt-legend-item">
+							<span class="sfpt-legend-swatch sfpt-legend-swatch-issue"></span>
+							Issues
+						</span>
+					</div>
+				</div>
+			</section>
+
+			<div class="sfpt-fade sfpt-delay-3">
+				<SfptTbd />
+			</div>
+		</article>
+
+		<footer class="sfpt-footer sfpt-fade sfpt-delay-4">
+			<span class="sfpt-footer-copy">© 2026 Qing Yao. All rights reserved.</span>
+		</footer>
+	</main>
+</BaseLayout>
