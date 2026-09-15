@@ -14,6 +14,7 @@ Active routes:
 
 - `/` — personal introduction (includes the publications list).
 - `/RSB/` — RSB paper and interactive audio demo.
+- `/CoF/` — CoF paper demo (placeholder, under construction).
 
 Important files:
 

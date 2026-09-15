@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/cof.css';
+
+const title = 'Corrective Forcing: Unified Post-Training for Diffusions and Flows in Generative Speech Enhancement';
+---
+
+<BaseLayout
+	title={`${title} — Qing Yao`}
+	description="Paper demo for Corrective Forcing (CoF), a unified post-training paradigm for diffusion and flow generative speech-enhancement models."
+	bodyClass="cof-body"
+>
+	<main class="cof-page">
+		<!--
+			AGENT RESOURCE NOTE (intentionally hidden from rendered page visitors):
+			This is the public CoF paper demo page, currently a placeholder showing only
+			the paper title and a building note. The full demo (abstract, benchmark bar
+			charts, interactive quality-vs-NFE Pareto-frontier curves) is under
+			development and will extend this page, mirroring the /RSB/ page layout
+			(src/pages/RSB/index.astro). The paper's first-page footnote points readers
+			of the CoF manuscript to this exact URL (https://yorch233.github.io/CoF).
+		-->
+		<article class="cof-article">
+			<img class="cof-watermark" src="/logo/icon.png" alt="" aria-hidden="true" />
+
+			<header class="cof-hero cof-fade cof-delay-1">
+				<p class="cof-kicker">Paper demo</p>
+				<h1 class="cof-title">
+					<span class="cof-highlight">Corrective Forcing</span>:
+					Unified Post-Training for Diffusions and Flows in
+					<span class="cof-highlight">Generative Speech Enhancement</span>
+				</h1>
+			</header>
+
+			<div class="cof-tbd cof-fade cof-delay-2" role="note" aria-label="Demo content coming soon">
+				<span class="cof-tbd-badge">Building</span>
+				<p class="cof-tbd-text">
+					The interactive demo for this paper is under construction and will appear here soon.
+				</p>
+			</div>
+		</article>
+
+		<footer class="cof-footer cof-fade cof-delay-3">
+			<span class="cof-footer-copy">© 2026 Qing Yao. All rights reserved.</span>
+		</footer>
+	</main>
+</BaseLayout>

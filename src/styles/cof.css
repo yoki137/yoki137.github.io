@@ -1,0 +1,155 @@
+.cof-body {
+	background: #f5f5f7;
+	color: #1d1d1f;
+}
+
+.cof-page {
+	min-height: 100vh;
+	min-width: 1200px;
+	padding: 64px 20px 96px;
+	background: #f5f5f7;
+	color: #1d1d1f;
+	font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+	user-select: none;
+}
+
+.cof-article {
+	box-sizing: content-box;
+	position: relative;
+	overflow: hidden;
+	max-width: 1120px;
+	margin: 0 auto;
+	padding: 48px 56px 56px;
+	border: 1px solid rgba(0, 0, 0, 0.04);
+	border-radius: 24px;
+	background: rgba(255, 255, 255, 0.92);
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+	backdrop-filter: blur(18px);
+}
+
+.cof-watermark {
+	position: absolute;
+	top: 90px;
+	right: -80px;
+	z-index: 0;
+	width: 260px;
+	height: 260px;
+	opacity: 0.035;
+	filter: grayscale(100%);
+	pointer-events: none;
+	user-select: none;
+}
+
+.cof-hero {
+	position: relative;
+	z-index: 1;
+	padding-bottom: 24px;
+}
+
+.cof-kicker {
+	margin: 0;
+	color: #0071e3;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.cof-title {
+	margin: 25px 0;
+	font-size: 2.6rem;
+	font-weight: 700;
+	line-height: 1.5;
+}
+
+.cof-highlight {
+	padding: 2px 6px;
+	border-radius: 8px;
+	background: transparent;
+	color: inherit;
+	font-weight: 700;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+}
+
+.cof-tbd {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	margin-top: 42px;
+	padding: 34px 24px;
+	border: 1.5px dashed rgba(0, 113, 227, 0.35);
+	border-radius: 16px;
+	background: rgba(255, 255, 255, 0.6);
+	text-align: center;
+}
+
+.cof-tbd-badge {
+	padding: 5px 14px;
+	border-radius: 999px;
+	background: rgba(0, 113, 227, 0.12);
+	color: #0071e3;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+}
+
+.cof-tbd-text {
+	margin: 0;
+	color: #6e6e73;
+	font-size: 0.95rem;
+	line-height: 1.7;
+}
+
+.cof-footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+	margin-top: 32px;
+	color: #9ca3af;
+	font-size: 16px;
+	line-height: 1.4;
+	text-align: center;
+}
+
+.cof-footer-copy {
+	font-size: 16px;
+	letter-spacing: 0.01em;
+}
+
+.cof-fade {
+	opacity: 0;
+	animation: cofFadeInUp 0.8s ease both;
+}
+
+.cof-delay-1 {
+	animation-delay: 0.08s;
+}
+
+.cof-delay-2 {
+	animation-delay: 0.16s;
+}
+
+.cof-delay-3 {
+	animation-delay: 0.24s;
+}
+
+@keyframes cofFadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cof-fade {
+		opacity: 1;
+		animation: none !important;
+	}
+}
